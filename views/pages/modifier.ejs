@@ -1,0 +1,55 @@
+<%- include('../partiels/header') %>
+
+<div class="container w-50 p-5">
+  <% if (utilisateurs) { %>
+  <form
+    class="bg-light rounded p-3"
+    method="POST"
+    action="/modifier/<%= utilisateurs.id_utilisateur %>"
+  >
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="nom"
+        id="nom"
+        class="form-control"
+        placeholder="Nom"
+        value="<%= utilisateurs.nom_utilisateur %>"
+        required
+      />
+      <label> Nom</label>
+    </div>
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="prenom"
+        id="prenom"
+        class="form-control"
+        placeholder="prenom"
+        value="<%= utilisateurs.prenoms_utilisateur %>"
+        required
+      />
+      <label> Prenoms</label>
+    </div>
+
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="profession"
+        id="profession"
+        class="form-control"
+        placeholder="profession"
+        value="<%= utilisateurs.profession %>"
+        required
+      />
+      <label> Profession</label>
+    </div>
+    <button class="btn btn-success m-2">Modifier</button>
+    <% } %>
+  </form>
+
+  <a href="/">
+    <button class="btn btn-primary mt-2">Revenir en arriere</button>
+  </a>
+</div>
+<%- include('../partiels/footer') %>

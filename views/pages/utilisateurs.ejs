@@ -1,0 +1,39 @@
+<%- include('../partiels/header') %>
+<div class="container mt-5 p-2">
+  <table class="table bg-light rounded">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenoms</th>
+        <th>Profession</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (utilisateur of utilisateurs ) { %>
+      <tr>
+        <td><%= utilisateur.nom_utilisateur %></td>
+        <td><%= utilisateur.prenoms_utilisateur %></td>
+        <td><%= utilisateur.profession %></td>
+        <td>
+          <a href="/modifier/<%= utilisateur.id_utilisateur %>"
+            ><button class="btn btn-success">Modifier</button></a
+          >
+        </td>
+        <td>
+          <a href="supprimer/<%=utilisateur.id_utilisateur%>"
+            ><button class="btn btn-danger">Supprimer</button></a
+          >
+        </td>
+      </tr>
+
+      <% } %>
+    </tbody>
+  </table>
+
+  <a href="/">
+    <button class="btn btn-primary">Revenir en arriere</button>
+  </a>
+</div>
+<%- include('../partiels/footer') %>

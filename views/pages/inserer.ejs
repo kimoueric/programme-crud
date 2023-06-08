@@ -1,0 +1,51 @@
+<%- include('../partiels/header') %>
+<div class="container w-50 p-5">
+  <% if (locals.typeErreur && locals.typeErreur.succes) { %>
+  <div class="alert alert-success mt-1"><%= typeErreur.succes %></div>
+  <% } %>
+  <div class="container form-text text-dark mb-2">
+    Veuillez founir les informations necessaires
+  </div>
+  <form class="bg-light rounded p-3" method="POST" action="/inserer">
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="nom"
+        id="nom"
+        class="form-control"
+        placeholder="Nom"
+        required
+      />
+      <label> Nom</label>
+    </div>
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="prenom"
+        id="prenom"
+        class="form-control"
+        placeholder="prenom"
+        required
+      />
+      <label> Prenoms</label>
+    </div>
+
+    <div class="form-floating m-2">
+      <input
+        type="text"
+        name="profession"
+        id="profession"
+        class="form-control"
+        placeholder="profession"
+        required
+      />
+      <label> Profession</label>
+    </div>
+    <button class="btn btn-success m-2">Envoyer</button>
+  </form>
+
+  <a href="/">
+    <button class="btn btn-primary mt-2">Revenir en arriere</button>
+  </a>
+</div>
+<%- include('../partiels/footer') %>
